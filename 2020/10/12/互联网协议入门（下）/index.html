@@ -169,7 +169,7 @@
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>October 12, 2020</span
         class="post-info-item">
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>3921</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>4223</span>
     </div>
   </div>
 </section>
@@ -247,7 +247,11 @@
 <p>然后他打开浏览器，想要访问Google，在地址栏输入了网址：‘<a target="_blank" rel="noopener" href="http://www.google.com’./">www.google.com’。</a><br>这意味着，浏览器要向Google发送一个网页请求的数据包。</p>
 <h4 id="9-2-DNS协议"><a href="#9-2-DNS协议" class="headerlink" title="9.2 DNS协议"></a>9.2 DNS协议</h4><p>我们知道，发送数据包，必须要知道对方的IP地址。但是，现在，我们只知道网址 ‘<a target="_blank" rel="noopener" href="http://www.google.com’,不知道它的ip地址./">www.google.com’，不知道它的IP地址。</a><br>DNS协议可以帮助我们，将这个网址转换成IP地址。已知DNS服务器为8.8.8.8，于是我们向这个地址发送一个DNS数据包（53端口）。<br><img   class="lazyload" data-original="/images/theme/2.5.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="avatar"></p>
 <p>然后，DNS服务器做出响应，告诉我们Google的IP地址是172.194.72.105。于是，我们知道了对方的IP地址。</p>
-<p><meta name="apple-mobile-web-app-capable" content="yes" ><br>  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><br>  <meta name="google" content="notranslate" ></meta name="google" content="notranslate" ></meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta name="apple-mobile-web-app-capable" content="yes" ></p>
+ <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.lis = <span class="keyword">this</span>.main.querySelectorAll(<span class="string">&#x27;li&#x27;</span>);</span><br><span class="line">       <span class="keyword">this</span>.sections = <span class="keyword">this</span>.main.querySelectorAll(<span class="string">&#x27;section&#x27;</span>);</span><br><span class="line">       <span class="keyword">this</span>.remove = <span class="keyword">this</span>.main.querySelectorAll(<span class="string">&#x27;.icon-guanbi&#x27;</span>);</span><br><span class="line">       <span class="keyword">this</span>.spans = <span class="keyword">this</span>.main.querySelectorAll(<span class="string">&#x27;.fisrstnav li span:first-child&#x27;</span>)</span><br><span class="line">       </span><br></pre></td></tr></table></figure>
+
+
+
+
 <h4 id="9-3-子网掩码"><a href="#9-3-子网掩码" class="headerlink" title="9.3 子网掩码"></a>9.3 子网掩码</h4><p>接下来，我们要判断，这个IP地址是不是在同一个子网络，这就要用到子网掩码。<br>已知子网掩码是255.255.255.0，本机用它对自己的IP地址192.168.1.100，做一个二进制的AND运算（两个数位都为1，结果为1，否则为0），计算结果为192.168.1.0；然后对Google的IP地址172.194.72.105也做一个AND运算，计算结果为172.194.72.0。这两个结果不相等，所以结论是，Google与本机不在同一个子网络。<br>因此，我们要向Google发送数据包，必须通过网关192.168.1.1转发，也就是说，接收方的MAC地址将是网关的MAC地址。</p>
 <h4 id="9-4-应用层协议"><a href="#9-4-应用层协议" class="headerlink" title="9.4 应用层协议"></a>9.4 应用层协议</h4><p>浏览网页用的是HTTP协议，它的整个数据包构造是这样的：</p>
 <p><img   class="lazyload" data-original="/images/theme/2.6.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="avatar"></p>
@@ -291,8 +295,10 @@
         
 <nav class="nav">
   
+    <a href="/2021/01/28/%E6%96%B0%E5%BB%BA%20Microsoft%20Word%20%E6%96%87%E6%A1%A3/"><i class="iconfont iconleft"></i></a>
   
-    <a href="/2020/10/04/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%8A%EF%BC%89/">互联网协议入门（上）<i class="iconfont iconright"></i></a>
+  
+    <a href="/2020/10/02/index/">第一篇博文<i class="iconfont iconright"></i></a>
   
 </nav>
 
